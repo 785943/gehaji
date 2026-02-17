@@ -314,7 +314,7 @@ class GeminiClient:
         )
         #log("INFO", f"Request body to Google: {json.dumps(data, ensure_ascii=False)}")
 
-        url = f"http://127.0.0.1:8045/{api_version}/{model}:streamGenerateContent?key={self.api_key}&alt=sse"
+        url = f"http://127.0.0.1:8045/{api_version}/models/{model}:streamGenerateContent?key={self.api_key}&alt=sse"
         headers = {
             "Content-Type": "application/json",
         }
@@ -369,7 +369,7 @@ class GeminiClient:
         )
         #log("INFO", f"Request body to Google: {json.dumps(data, ensure_ascii=False)}")
 
-        url = f"http://127.0.0.1:8045/{api_version}/{model}:generateContent?key={self.api_key}"
+        url = f"http://127.0.0.1:8045/{api_version}/models/{model}:generateContent?key={self.api_key}"
         headers = {
             "Content-Type": "application/json",
         }
@@ -546,7 +546,7 @@ class GeminiClient:
 
     @staticmethod
     async def list_available_models(api_key) -> list:
-        url = "http://127.0.0.1:8045/v1beta?key={}".format(
+        url = "http://127.0.0.1:8045/v1beta/models?key={}".format(
             api_key
         )
         async with httpx.AsyncClient() as client:
@@ -570,7 +570,7 @@ class GeminiClient:
         """
         获取原生Gemini模型列表
         """
-        url = "http://127.0.0.1:8045/v1beta?key={}".format(
+        url = "http://127.0.0.1:8045/v1beta/models?key={}".format(
             api_key
         )
         async with httpx.AsyncClient() as client:
