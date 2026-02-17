@@ -546,7 +546,7 @@ class GeminiClient:
 
     @staticmethod
     async def list_available_models(api_key) -> list:
-        url = "https://generativelanguage.googleapis.com/v1beta/models?key={}".format(
+        url = "http://127.0.0.1:8045/v1beta/models?key={}".format(
             api_key
         )
         async with httpx.AsyncClient() as client:
@@ -570,7 +570,7 @@ class GeminiClient:
         """
         获取原生Gemini模型列表
         """
-        url = "https://generativelanguage.googleapis.com/v1beta/models?key={}".format(
+        url = "http://127.0.0.1:8045/v1beta/models?key={}".format(
             api_key
         )
         async with httpx.AsyncClient() as client:
