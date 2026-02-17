@@ -314,7 +314,7 @@ class GeminiClient:
         )
         #log("INFO", f"Request body to Google: {json.dumps(data, ensure_ascii=False)}")
 
-        url = f"https://generativelanguage.googleapis.com/{api_version}/models/{model}:streamGenerateContent?key={self.api_key}&alt=sse"
+        url = f"http://127.0.0.1:8045/{api_version}/models/{model}:streamGenerateContent?key={self.api_key}&alt=sse"
         headers = {
             "Content-Type": "application/json",
         }
@@ -369,7 +369,7 @@ class GeminiClient:
         )
         #log("INFO", f"Request body to Google: {json.dumps(data, ensure_ascii=False)}")
 
-        url = f"https://generativelanguage.googleapis.com/{api_version}/models/{model}:generateContent?key={self.api_key}"
+        url = f"http://127.0.0.1:8045/{api_version}/models/{model}:generateContent?key={self.api_key}"
         headers = {
             "Content-Type": "application/json",
         }
