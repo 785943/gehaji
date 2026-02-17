@@ -314,7 +314,7 @@ class GeminiClient:
         )
         #log("INFO", f"Request body to Google: {json.dumps(data, ensure_ascii=False)}")
 
-        url = f"http://127.0.0.1:8045/{api_version}/models/{model}:streamGenerateContent?key={self.api_key}&alt=sse"
+        url = f"http://127.0.0.1:8045/v1beta/models/{model}:streamGenerateContent?key={self.api_key}&alt=sse"
         headers = {
             "Content-Type": "application/json",
         }
@@ -369,7 +369,7 @@ class GeminiClient:
         )
         #log("INFO", f"Request body to Google: {json.dumps(data, ensure_ascii=False)}")
 
-        url = f"http://127.0.0.1:8045/{api_version}/models/{model}:generateContent?key={self.api_key}"
+        url = f"http://127.0.0.1:8045/v1beta/models/{model}:generateContent?key={self.api_key}"
         headers = {
             "Content-Type": "application/json",
         }
@@ -557,7 +557,7 @@ class GeminiClient:
             for model in data.get("models", []):
                 models.append(model["name"])
                 if (
-                    model["name"].startswith("models/gemini-2")
+                    model["name"].startswith("models/gemini-3-pro")
                     and settings.search["search_mode"]
                 ):
                     models.append(model["name"] + "-search")
