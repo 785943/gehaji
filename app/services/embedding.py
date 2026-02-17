@@ -10,7 +10,7 @@ class EmbeddingClient:
     async def create_embeddings(self, request: EmbeddingRequest) -> EmbeddingResponse:
         model_name = request.model
         
-        url = f"http://127.0.0.1:8045/v1beta/models/{model_name}:batchEmbedContents"
+        url = f"http://127.0.0.1:8045/v1beta/{model_name}:batchEmbedContents"
         headers = {
             "Content-Type": "application/json",
             "x-goog-api-key": self.api_key,
